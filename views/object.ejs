@@ -1,0 +1,53 @@
+<%- include('header') %>
+
+<h1>Object</h1>
+
+<ul>
+  <% objects.forEach(object => { %>
+  <li>
+    <a href="/object/<%- object.objectnumber %>">Object #<%- object.objectnumber %>: <%- object.title %> (People<%-object.people %>)</a>
+    <br/>
+    <a href="<%- object.url%>">Website</a>
+    <br/>
+    <img src ="<%- object.primaryimageurl%>" style = "width: 500px; height: 600px">
+    <br/><br/>
+    <a id = "comments_section">Comments</a>
+    <br/>
+    <%- commentssection%>
+    <br/>
+
+
+    <h1>Add Comment</h1>
+
+<body>
+   
+    <form name="addcomment" method="POST" action="/object/<%- object.objectnumber%>">
+    <table>
+            <tr>
+                    <td>Name</td>
+                    <td><input type="text" name="thisname" ></td>
+                    </tr>
+        <tr>
+        <td>Comment</td>
+        <td><input type="text" name="thiscomment" ></td>
+        </tr>
+        <td colspan="2"><input type="submit" value="Submit" ></td>
+        </tr>
+    </table>
+    </form> 
+    
+</body>
+  </li>
+  <% }); %>
+
+  
+
+</ul>
+
+
+<%- include('footer') %>
+
+
+
+
+

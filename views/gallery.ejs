@@ -1,0 +1,23 @@
+<%- include('header') %>
+
+<h1>Gallery</h1>
+
+<ul>
+  <% objects.forEach(object => { %>
+  <li>
+    <a href="/object/<%- object.objectnumber %>">Object #<%- object.objectnumber %>: <%- object.title %> (People<%-object.people %>)</a>
+    <br/>
+    <a href="<%- object.url%>">Website</a>
+    <br/>
+    <img src ="<%- object.primaryimageurl%>" style = "width: 500px; height: 600px">
+    <br/><br/>
+  </li>
+  <% }); %>
+</ul>
+
+<%- include('footer') %>
+
+
+
+
+
